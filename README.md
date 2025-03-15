@@ -1,4 +1,4 @@
-# AI Resume Analyzer [**DEMO LINK**](https://gowthams05.github.io/resume-analysis/)
+# AI Resume Analyzer ([DEMO LINK](https://gowthams05.github.io/resume-analysis/))
 
 ## Overview
 AI Resume Analyzer is an intelligent web application that helps users optimize their resumes for Applicant Tracking Systems (ATS). Users can upload their resumes, paste a job description, and receive detailed feedback to improve their chances of landing an interview.
