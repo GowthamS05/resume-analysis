@@ -308,7 +308,7 @@ input:focus {
 [data-tooltip] {
     position: relative; /* Needed for absolute positioning of the tooltip */
     cursor: pointer;
-    font-size: small;
+    font-size: medium;
   }
   
   [data-tooltip]:hover::after {
