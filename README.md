@@ -1,4 +1,4 @@
-# AI Resume Analyzer
+# AI Resume Analyzer [**DEMO LINK**](https://gowthams05.github.io/resume-analysis/)
 
 ## Overview
 AI Resume Analyzer is an intelligent web application that helps users optimize their resumes for Applicant Tracking Systems (ATS). Users can upload their resumes, paste a job description, and receive detailed feedback to improve their chances of landing an interview.
@@ -41,31 +41,19 @@ Contributions are welcome! Please follow these steps:
 
 ## Attachments
 **Home Screen - Screenshots**:
-  
-![image](https://github.com/user-attachments/assets/e93cf3bf-1f0f-45b8-8902-8473e56ece6c)
-
+  ![image](https://github.com/user-attachments/assets/a6dadd7f-faf8-4837-8ee7-70a96ba6077d)
 
 **ATS Aalysis-Screenshots**:
-
-![image](https://github.com/user-attachments/assets/2ae2a89b-be9e-4e96-b85f-a10efadc7c11)
-
-
+![image](https://github.com/user-attachments/assets/4e1c9b66-b177-4807-ae18-c31429f474b3)
 
 **JD Analysis -Screenshots**
-
-![image](https://github.com/user-attachments/assets/7da325d5-e8b5-48cd-aef5-77b2194e17e5)
-
-
+![image](https://github.com/user-attachments/assets/a7b86fef-9f5d-44f6-a00d-c9f9791ae1bf)
 
 **Format Analyis Screenshots**
-
-![image](https://github.com/user-attachments/assets/44d2320d-bd0a-409b-ad15-079a214a4eb5)
-
+![image](https://github.com/user-attachments/assets/1a834dd3-dc00-4713-8305-6001f4edfd2a)
 
 **Overall Screenshots**:
-
-![image](https://github.com/user-attachments/assets/97a3e7c6-27be-474c-ad80-eccaa6474fbf)
-
+![image](https://github.com/user-attachments/assets/0093a299-5a17-4398-98ad-e524af36b880)
 
 
 ## License
