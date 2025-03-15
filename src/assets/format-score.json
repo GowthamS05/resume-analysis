@@ -1,0 +1,23 @@
+{
+    "name": "Gowtham S",
+    "email": "gow1234@gmail.com",
+    "phone": "+91-123456789",
+    "completeness": 90,
+    "sections_present": [
+      "summary",
+      "skills & certifications",
+      "professional experience",
+      "education"
+    ],
+    "sections_missing": [
+      "projects",
+      "awards",
+      "volunteer experience"
+    ],
+    "suggestions": [
+      "Add a projects section",
+      "Include an awards section",
+      "Consider adding volunteer experience"
+    ],
+    "readability": 85
+  }

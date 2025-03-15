@@ -1,0 +1,364 @@
+/* ===== DASHBOARD CONTENT ===== */
+.dashboard-content {
+    padding: 30px;
+}
+
+/* Section title styling */
+.section-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* ===== SCORE OVERVIEW SECTION ===== */
+.score-overview {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Individual score card */
+.score-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    text-align: center;
+    position: relative;
+}
+
+/* Circle progress indicator */
+.score-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Circle background */
+.score-circle-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #f0f0f0;
+}
+
+/* Progress circle fill */
+.score-progress {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    clip: rect(0, 150px, 150px, 75px);
+    background: conic-gradient(var(--progress-color) var(--progress), transparent 0);
+    transform: rotate(270deg);
+}
+
+/* Handle progress > 50% */
+.score-progress.over50 {
+    clip: rect(auto, auto, auto, auto);
+}
+
+/* Inner circle with score value */
+.score-inner {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
+}
+
+/* Score number display */
+.score-value {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--progress-color);
+}
+
+/* "Out of 100" text */
+.score-label {
+    font-size: 13px;
+    color: #999;
+    margin-top: 5px;
+}
+
+/* Score card title */
+.score-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Score card description */
+.score-description {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ===== SECTIONS ANALYSIS ===== */
+.sections-analysis {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Sections card container */
+.sections-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+}
+
+/* Sections section header */
+.sections-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Sections count badge */
+.sections-count {
+    background-color: #6c5ce7;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* Section list container */
+.sections-list {
+    list-style: none;
+}
+
+/* Individual section item */
+.section-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.section-item:last-child {
+    border-bottom: none;
+}
+
+/* Section item icon */
+.section-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+/* Section item text */
+.section-text {
+    font-size: 15px;
+    color: #333;
+}
+
+/* Completed section */
+.section-item.completed .section-icon {
+    color: #4caf50;
+}
+
+/* Missing section */
+.section-item.missing .section-icon {
+    color: #e74c3c;
+}
+
+/* ===== SUGGESTIONS SECTION ===== */
+.suggestions {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    margin-bottom: 40px;
+}
+
+.suggestions h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Individual suggestion item */
+.suggestion-item {
+    display: flex;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.suggestion-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* Suggestion icon container */
+.suggestion-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+    color: #6c5ce7;
+    font-size: 18px;
+}
+
+/* Suggestion text content */
+.suggestion-content {
+    font-size: 15px;
+    color: #666;
+    line-height: 3;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+/* Base button styles */
+.btn {
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Primary button style */
+.btn-primary {
+    background-color: #6c5ce7;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #5b4dc7; /* Darker shade */
+}
+
+/* Outline button style */
+.btn-outline {
+    background-color: transparent;
+    color: #6c5ce7;
+    border: 1px solid #6c5ce7;
+}
+
+.btn-outline:hover {
+    background-color: #f8f9fa;
+}
+
+/* Button icon */
+.btn-icon {
+    margin-left: 8px;
+}
+
+/* Large tablets and small desktops */
+@media (max-width: 1024px) {
+    .score-overview {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    }
+}
+
+/* Tablets and large mobile */
+@media (max-width: 768px) {
+    
+    /* Score overview responsive */
+    .score-overview {
+        grid-template-columns: 1fr; /* 1 card per row */
+    }
+    
+    /* Sections analysis responsive */
+    .sections-analysis {
+        grid-template-columns: 1fr; /* 1 card per row */
+    }
+    
+    /* Dashboard content padding */
+    .dashboard-content {
+        padding: 20px 15px;
+    }
+    
+    /* Score circle size on mobile */
+    .score-circle {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .score-inner {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .score-value {
+        font-size: 28px;
+    }
+    
+    /* Section title responsive */
+    .section-title {
+        font-size: 20px;
+    }
+    
+    /* Action buttons responsive */
+    .action-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    /* Stack suggestion items */
+    .suggestion-item {
+        flex-direction: column;
+    }
+    
+    .suggestion-icon {
+        margin-bottom: 10px;
+    }
+ 
+}

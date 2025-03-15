@@ -1,0 +1,164 @@
+
+{
+  "ats_score": {
+    "message": {
+      "name": "Gowtham S",
+      "email": "gow1234@gmail.com",
+      "phone": "+91-123456789",
+      "overall": 85,
+      "keywords": [
+        "Frontend Engineer",
+        "Angular",
+        "TypeScript",
+        "Python",
+        "AI",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Bootstrap",
+        "RxJS",
+        "NGRX",
+        "RESTful API",
+        "GitHub",
+        "Bitbucket",
+        "Trello",
+        "Jira",
+        "Datadog",
+        "Jenkins",
+        "VS Code",
+        "Sublime",
+        "Notepad++",
+        "Azure AI-900",
+        "Azure AZ-900",
+        "LangGraph",
+        "AI-powered chatbot",
+        "LLM agents",
+        "OpenAI",
+        "micro-frontend",
+        "Agile"
+      ],
+      "missing_keywords": [
+        "React",
+        "Vue.js",
+        "Docker",
+        "Kubernetes",
+        "GraphQL",
+        "SQL",
+        "NoSQL"
+      ],
+      "format_score": 90
+    },
+    "cost": 0.00077115,
+    "token": {
+      "prompt_tokens": 3061,
+      "completion_tokens": 520,
+      "total_tokens": 3581
+    }
+  },
+  "jd_score": {
+    "message": {
+      "name": "Gowtham S",
+      "email": "gow1234@gmail.com",
+      "phone": "+91-123456789",
+      "score": 70,
+      "matching_skills": [
+        "JavaScript",
+        "TypeScript",
+        "Angular",
+        "HTML5",
+        "CSS3",
+        "Python",
+        "CI/CD",
+        "Agile"
+      ],
+      "missing_skills": [
+        "React",
+        "Redux",
+        "D3JS",
+        "NodeJs",
+        "Webpack",
+        "Jest",
+        "Cypress"
+      ],
+      "recommendations": [
+        "Gain experience with React and Redux",
+        "Familiarize with D3JS for data visualization",
+        "Learn NodeJs and Webpack for backend integration",
+        "Consider obtaining certification in cloud technologies"
+      ],
+      "relevance": 85
+    },
+    "cost": 0.0008038499999999999,
+    "token": {
+      "prompt_tokens": 3983,
+      "completion_tokens": 344,
+      "total_tokens": 4327
+    }
+  },
+  "format_score": {
+    "message": {
+      "name": "Gowtham S",
+      "email": "gow1234@gmail.com",
+      "phone": "+91-123456789",
+      "completeness": 90,
+      "sections_present": [
+        "summary",
+        "skills & certifications",
+        "professional experience",
+        "education"
+      ],
+      "sections_missing": [
+        "projects",
+        "awards",
+        "volunteer experience"
+      ],
+      "suggestions": [
+        "Add a projects section",
+        "Include an awards section",
+        "Consider adding volunteer experience"
+      ],
+      "readability": 85
+    },
+    "cost": 0.0006049499999999999,
+    "token": {
+      "prompt_tokens": 3057,
+      "completion_tokens": 244,
+      "total_tokens": 3301
+    }
+  },
+  "overall": {
+    "message": {
+      "overall_score": 75,
+      "summary": "The resume demonstrates solid experience in frontend development and AI solutions, but lacks key skills and technologies specified in the job description, particularly in React and Node.js.",
+      "strengths": [
+        "Over 10 years of experience in frontend development",
+        "Proficient in Angular and TypeScript",
+        "Experience with AI-driven solutions and chatbot development",
+        "Strong background in optimizing application performance",
+        "Recognition for impactful contributions in previous roles"
+      ],
+      "weaknesses": [
+        "Lacks experience with React and Node.js",
+        "Missing knowledge of Redux and D3JS",
+        "No mention of cloud technologies or containerization",
+        "Limited details on projects and certifications",
+        "Does not highlight experience in a large corporate environment"
+      ],
+      "action_items": [
+        "Gain proficiency in React and Node.js through online courses or projects",
+        "Learn Redux and D3JS to enhance frontend development skills",
+        "Explore cloud technologies and containerization (e.g., Docker, Kubernetes)",
+        "Add a projects section to showcase relevant work and contributions",
+        "Include detailed descriptions of certifications and their relevance",
+        "Highlight experience in large corporate environments if applicable"
+      ],
+      "improvement_plan": "To enhance the resume, focus on acquiring skills in React and Node.js, as these are critical for the desired role. Additionally, gaining familiarity with cloud technologies and containerization will align the candidate more closely with industry standards. Including a projects section will provide tangible evidence of capabilities, while detailing certifications will demonstrate commitment to professional development."
+    },
+    "cost": 0.0016945499999999997,
+    "token": {
+      "prompt_tokens": 7241,
+      "completion_tokens": 1014,
+      "total_tokens": 8255
+    }
+  }
+}

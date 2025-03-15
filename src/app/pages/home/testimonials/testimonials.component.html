@@ -1,0 +1,34 @@
+<section class="testimonials">
+    <div class="container">
+        <div class="testimonials-title">
+            <h2>What Our Users Say</h2>
+        </div>
+        <div class="testimonial-slider">
+            <div class="testimonial-track" #testimonialTrack>
+              @for (testimonial of testimonials; track testimonial.index) {
+                <div class="testimonial-slide">
+                  <div class="testimonial-card glass">
+                    <div class="testimonial-avatar">
+                      <img [src]="testimonial.image" alt="{{testimonial.author}} Avatar" />
+                    </div>
+                    <p class="testimonial-quote">"{{ testimonial.quote }}"</p>
+                    <h4 class="testimonial-author">{{ testimonial.author }}</h4>
+                    <p class="testimonial-role">{{ testimonial.role }}</p>
+                  </div>
+                </div>
+              }
+            </div>
+          
+            <div class="testimonial-nav" #testimonialDots>
+                <div class="testimonial-dot" *ngFor="let testimonial of testimonials; let i = index"
+                [class.active]="i === 0"
+                     [attr.data-index]="i">
+                </div>
+              
+            </div>
+          </div>
+          
+          
+    </div>
+</section>
+

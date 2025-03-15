@@ -1,0 +1,53 @@
+{
+    "name": "Gowtham S",
+    "email": "gow1234@gmail.com",
+    "phone": "+91-123456789",
+    "overall": 88,
+    "keywords": [
+      "Frontend Engineer",
+      "Angular",
+      "TypeScript",
+      "Python",
+      "AI",
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Bootstrap",
+      "RxJS",
+      "NGRX",
+      "RESTful API",
+      "GitHub",
+      "Bitbucket",
+      "Trello",
+      "Jira",
+      "Datadog",
+      "Jenkins",
+      "VS Code",
+      "Sublime",
+      "Notepad++",
+      "Azure AI-900",
+      "Azure AZ-900",
+      "LangGraph",
+      "Micro-frontends",
+      "Agile"
+    ],
+    "missing_keywords": [
+      "React",
+      "Vue.js",
+      "Docker",
+      "Kubernetes",
+      "GraphQL"
+    ],
+    "format_score": 95,
+    "tips": [
+      {
+        "title": "Include More Frontend Frameworks",
+        "description": "Consider adding experience with other popular frameworks like React or Vue.js to broaden your appeal to potential employers."
+      },
+      {
+        "title": "Highlight Soft Skills",
+        "description": "In addition to technical skills, emphasize soft skills such as teamwork, communication, and problem-solving to present a well-rounded profile."
+      }
+    ]
+  
+}

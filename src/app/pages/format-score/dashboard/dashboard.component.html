@@ -1,0 +1,22 @@
+<div class="container" #reportContent>
+    <!-- Page Header -->
+    <app-format-score-header></app-format-score-header>
+    <!-- Dashboard Container -->
+    <div class="dashboard">
+        <!-- Dashboard Header with User Info -->
+        <div class="dashboard-header">
+            <h2>Resume Structure Results</h2>
+            <div class="candidate-info" *ngIf="data() as formaData">
+                <div class="gap-10"><i class="fa fa-user"></i> <b>{{ formaData.name }}</b> | </div>
+                <div class="gap-10"><i class="fa fa-envelope"></i> <b>{{ formaData.email }}</b> | </div>
+                <div class="gap-10"><i class="fa fa-phone"></i> <b>{{ formaData.phone }}</b> | </div>
+                <div class="gap-10"><i class="fa fa-location"></i> <b>{{ formaData.location }}</b></div>
+
+            </div>
+        </div>
+
+        <!-- Dashboard Content Area -->
+         <app-format-score-content [data]="data()" [reportDOM]="reportContent"></app-format-score-content>
+       
+    </div>
+</div>

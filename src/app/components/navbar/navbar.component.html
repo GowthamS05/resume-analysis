@@ -1,0 +1,20 @@
+<nav class="navbar">
+    <div class="container nav-content">
+        <a class="logo"><span>AI</span> Resume<span> Analyzer</span></a>
+
+        <!-- Nav Links -->
+        <ul class="nav-links" [class.active]="isMenuOpen" (click)="closeMenu()">
+            <li><a routerLink="/home">Home</a></li>
+            <li *ngIf="showAtsMenu"><a routerLink="/ats">Check ATS Score</a></li>
+            <li *ngIf="showJDMenu"><a routerLink="/jd">Check JD Score</a></li>
+            <li *ngIf="showFormatMenu"><a routerLink="/format">Check Format Score</a></li>
+            <li *ngIf="showOverallMenu"><a routerLink="/overall">Check Overall Score</a></li>
+
+        </ul>
+
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" (click)="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</nav>

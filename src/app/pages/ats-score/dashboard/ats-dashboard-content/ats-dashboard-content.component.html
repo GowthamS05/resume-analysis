@@ -1,0 +1,117 @@
+<!-- Dashboard Content Area -->
+<div class="dashboard-content">
+    <!-- Score Overview Section -->
+    <h3 class="section-title">Score Overview</h3>
+    <div class="score-overview">
+
+
+         <!-- Overall Score -->
+         <div class="score-card">
+            <div class="score-circle">
+              <div class="score-circle-bg"></div>
+              <div class="score-progress over50" [style.--progress]="overallScore + '%'" [style.--progress-color]="
+              overallScore > 80 ? '#009f00' : 
+              overallScore > 70 ? '#26bc26' : 
+              overallScore > 60 ? '#e74c3c' : '#e74c3c'">
+              </div>
+              <div class="score-inner">
+                <div class="score-value">{{ overallScore | number: '1.0-0' }}</div>
+                <div class="score-label">Out of 100</div>
+              </div>
+            </div>
+            <h4 class="score-title">Overall Score</h4>
+            <p class="score-description">{{data?.overallComment}}</p>
+          </div>
+        <!-- Matching keyword  Score -->
+        <div class="score-card">
+            <div class="score-circle">
+              <div class="score-circle-bg"></div>
+              <div class="score-progress over50" [style.--progress]="readabilityScore + '%'" [style.--progress-color]="
+              readabilityScore > 80 ? '#009f00' : 
+              readabilityScore > 70 ? '#26bc26' : 
+              readabilityScore > 50 ? '#e74c3c' : '#e74c3c'">
+              </div>
+              <div class="score-inner">
+                <div class="score-value">{{ readabilityScore| number: '1.0-0' }}</div>
+                <div class="score-label">Out of 100</div>
+              </div>
+            </div>
+            <h4 class="score-title">Readbility Score</h4>
+            <p class="score-description">{{data?.readabilityScoreComment}}</p>
+          </div>
+
+        <!-- Missing keyword length Score -->
+        <div class="score-card">
+            <div class="score-circle">
+              <div class="score-circle-bg"></div>
+              <div class="score-progress over50" [style.--progress]="grammarScore + '%'" [style.--progress-color]="
+              grammarScore > 80 ? '#009f00' : 
+              grammarScore > 70 ? 'green' : 
+              grammarScore > 50 ? '#e74c3c' : '#e74c3c'">
+              </div>
+              <div class="score-inner">
+                <div class="score-value">{{ grammarScore | number: '1.0-0' }}</div>
+                <div class="score-label">Out of 100</div>
+              </div>
+            </div>
+            <h4 class="score-title">Grammar Score</h4>
+            <p class="score-description">{{data?.grammarScoreComment}}</p>
+          </div>
+
+     
+        
+    </div>
+
+    <!-- Keyword Analysis Section -->
+    <h3 class="section-title">Keyword Analysis</h3>
+    <div class="keyword-analysis">
+        <!-- Matching Keywords Card -->
+        <div class="keyword-card">
+            <h3>
+                Matching Keywords
+                <span class="keyword-count">{{data['keywords'].length}}</span>
+            </h3>
+            <div class="keyword-grid">
+                @for (matching of data['keywords']; track matching) {
+                <div class="keyword-tag">{{matching}}</div>                
+                }
+            </div>
+        </div>
+
+        <!-- Missing Keywords Card -->
+        <div class="keyword-card">
+            <h3>
+                Missing Keywords
+                <span class="keyword-count">{{data['missing_keywords'].length}}</span>
+            </h3>
+            <div class="keyword-grid">
+                @for (missing of data['missing_keywords']; track missing) {
+                    <div class="keyword-tag missing">{{missing}}</div>
+                }
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Recommendations Section -->
+    <h3 class="section-title">Recommendations</h3>
+    <div class="recommendations">
+        <!-- Individual recommendation items -->
+        @for (tip of data['tips']; track tip.title) {
+        <div class="recommendation-item">
+            <div class="recommendation-icon">⚠️</div>
+            <div class="recommendation-content">
+                <h4>{{tip.title}}</h4>
+                <p>{{tip.description}}</p>
+            </div>
+        </div>
+    }
+
+  
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+        <a  class="btn btn-primary" (click)="downloadReport()">Download Report <span class="btn-icon">↓</span></a>
+    </div>
+</div>

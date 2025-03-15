@@ -1,0 +1,1 @@
+import{M as s}from"./chunk-DDA2IPGD.js";var l=class t{analyseData={};setData(a,e){this.analyseData[a]=e}getData(a){return this.analyseData[a]??null}clearData(a){delete this.analyseData[a]}clearAll(){this.analyseData={}}static \u0275fac=function(e){return new(e||t)};static \u0275prov=s({token:t,factory:t.\u0275fac,providedIn:"root"})};export{l as a};

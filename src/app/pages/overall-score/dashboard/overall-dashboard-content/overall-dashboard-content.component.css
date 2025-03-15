@@ -1,0 +1,478 @@
+
+/* ===== DASHBOARD CONTENT ===== */
+.dashboard-content {
+    padding: 30px;
+}
+
+/* Section title styling */
+.section-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.section-icon {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+/* ===== SCORE OVERVIEW SECTION ===== */
+.score-overview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Individual score card */
+.score-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    text-align: center;
+    position: relative;
+}
+
+/* Circle progress indicator */
+.score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Circle background */
+.score-circle-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #f0f0f0;
+}
+
+/* Progress circle fill */
+.score-progress {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    clip: rect(0, 120px, 120px, 60px);
+    background: conic-gradient(var(--progress-color) var(--progress), transparent 0);
+    transform: rotate(270deg);
+}
+
+/* Handle progress > 50% */
+.score-progress.over50 {
+    clip: rect(auto, auto, auto, auto);
+}
+
+/* Inner circle with score value */
+.score-inner {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
+}
+
+/* Score number display */
+.score-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--progress-color);
+}
+
+/* "Out of 100" text */
+.score-label {
+    font-size: 12px;
+    color: #999;
+    margin-top: 3px;
+}
+
+/* Score card title */
+.score-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Score card description */
+.score-description {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ===== SUMMARY SECTION ===== */
+.summary-section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.summary-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* ===== STRENGTHS AND WEAKNESSES ===== */
+.strengths-weaknesses {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.strengths-card,
+.weaknesses-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+}
+
+.strengths-card h3,
+.weaknesses-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.strengths-card h3 .icon {
+    color: #4caf50;
+    margin-right: 10px;
+}
+
+.weaknesses-card h3 .icon {
+    color: #e74c3c;
+    margin-right: 10px;
+}
+
+.strengths-list,
+.weaknesses-list {
+    list-style: none;
+}
+
+.strength-item,
+.weakness-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.strength-item:last-child,
+.weakness-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.strength-icon,
+.weakness-icon {
+    min-width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 14px;
+}
+
+.strength-icon {
+    color: #4caf50;
+}
+
+.weakness-icon {
+    color: #e74c3c;
+}
+
+.strength-text,
+.weakness-text {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ===== ACTION ITEMS ===== */
+.action-items {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.action-items h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.action-items h3 .icon {
+    color: #f39c12;
+    margin-right: 10px;
+}
+
+.action-list {
+    list-style: none;
+}
+
+.action-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.action-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.action-number {
+    min-width: 25px;
+    height: 25px;
+    background-color: #f39c12;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.action-text {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ===== IMPROVEMENT PLAN ===== */
+.improvement-plan {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.improvement-plan h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.improvement-plan h3 .icon {
+    color: #00b894;
+    margin-right: 10px;
+}
+
+.improvement-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* ===== SKILLS ANALYSIS SECTION ===== */
+.skills-analysis {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Skills card container */
+.skills-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+}
+
+/* Skills section header */
+.skills-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Skills count badge */
+.skills-count {
+    background-color: #6c5ce7;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* Skills tags container */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Individual skill tag */
+.skill-tag {
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    background-color: #f0f8ff;
+    color: #6c5ce7;
+}
+
+/* Missing skill tag */
+.skill-tag.missing {
+    background-color: #fff0f0;
+    color: #e74c3c;
+}
+
+
+/* ===== ACTION BUTTONS ===== */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+/* Base button styles */
+.btn {
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Primary button style */
+.btn-primary {
+    background-color: #6c5ce7;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #5b4dc7;
+    /* Darker shade */
+}
+
+/* Outline button style */
+.btn-outline {
+    background-color: transparent;
+    color: #6c5ce7;
+    border: 1px solid #6c5ce7;
+}
+
+.btn-outline:hover {
+    background-color: #f8f9fa;
+}
+
+/* Button icon */
+.btn-icon {
+    margin-left: 8px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+    .score-overview {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+   
+
+    .skills-analysis {
+        grid-template-columns: 1fr; /* 1 card per row */
+    }
+
+    .score-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .strengths-weaknesses {
+        grid-template-columns: 1fr;
+    }
+
+
+
+    .dashboard-content {
+        padding: 20px 15px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .action-item,
+    .strength-item,
+    .weakness-item {
+        flex-direction: column;
+    }
+
+    .action-number,
+    .strength-icon,
+    .weakness-icon {
+        margin-bottom: 10px;
+    }
+
+}

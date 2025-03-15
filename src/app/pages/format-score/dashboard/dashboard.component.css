@@ -1,0 +1,66 @@
+  /* ===== MAIN CONTAINER ===== */
+  .container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+} 
+ 
+
+
+/* ===== DASHBOARD CONTAINER ===== */
+.dashboard {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* ===== DASHBOARD HEADER ===== */
+.dashboard-header {
+    background-color: #6c5ce7;
+    color: #fff;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.dashboard-header h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.dashboard-header .candidate-info {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    flex-wrap: wrap;
+}
+.gap-10 {
+    display: flex;
+    gap: 10px;
+}
+
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+
+/* Tablets and large mobile */
+@media (max-width: 768px) {
+   
+    
+    /* Dashboard header responsive */
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .dashboard-header .candidate-info {
+        margin-top: 10px;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+}

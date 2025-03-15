@@ -1,0 +1,99 @@
+<div class="dashboard-content">
+    <!-- Score Overview Section -->
+    <h3 class="section-title">Resume Metrics</h3>
+    <div class="score-overview">
+        <!-- Completeness Score -->
+        <div class="score-card">
+            <div class="score-circle">
+                <div class="score-circle-bg"></div>
+                <div class="score-progress over50" [style.--progress]="completeness + '%'"  [style.--progress-color]="
+                completeness > 80 ? '#009f00' : 
+                completeness > 70 ? '#26bc26' : 
+                completeness > 60 ? '#e74c3c' : '#e74c3c'"></div>
+                <div class="score-inner">
+                    <div class="score-value">{{ completeness | number: '1.0-0' }}</div>
+                    <div class="score-label">Out of 100</div>
+                </div>
+            </div>
+            <h4 class="score-title">Resume Completeness</h4>
+            <p class="score-description">{{data.completenessComments}}</p>
+        </div>
+
+        <!-- Readability Score -->
+        <div class="score-card">
+            <div class="score-circle">
+                <div class="score-circle-bg"></div>
+                <div class="score-progress over50" [style.--progress]="readability + '%'"  [style.--progress-color]="
+                readability > 80 ? '#009f00' : 
+                readability > 70 ? '#26bc26' : 
+                readability > 60 ? '#e74c3c' : '#e74c3c'"></div>
+                <div class="score-inner">
+                    <div class="score-value">{{ readability | number: '1.0-0' }}</div>
+                    <div class="score-label">Out of 100</div>
+                </div>
+            </div>
+            <h4 class="score-title">Readability Score</h4>
+            <p class="score-description">{{data.readabilityComments}}</p>
+        </div>
+    </div>
+
+    <!-- Sections Analysis -->
+    <h3 class="section-title">Resume Sections</h3>
+    <div class="sections-analysis">
+        <!-- Present Sections -->
+        <div class="sections-card">
+            <h3>
+                Present Sections
+                <span class="sections-count">{{data.sections_present.length}}</span>
+            </h3>
+            <ul class="sections-list">
+                @for(present of data['sections_present']; track present)
+                {
+                <li class="section-item completed">
+                    <div class="section-icon">✓</div>
+                    <div class="section-text">{{present}}</div>
+                </li>
+                }
+
+            </ul>
+        </div>
+
+        <!-- Missing Sections -->
+        <div class="sections-card">
+            <h3>
+                Missing Sections
+                <span class="sections-count">{{data.sections_missing.length}}</span>
+            </h3>
+            <ul class="sections-list">
+                @for(missing of data['sections_missing']; track missing)
+                {
+                <li class="section-item missing">
+                    <div class="section-icon">○</div>
+                    <div class="section-text">{{missing}}</div>
+                </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+    <!-- Suggestions Section -->
+    <h3 class="section-title">Improvement Suggestions</h3>
+    <div class="suggestions">
+        <!-- Individual suggestion items -->
+        @for(suggestion of data['suggestions']; track suggestion)
+        {
+        <div class="suggestion-item">
+            <div class="suggestion-icon">🔍</div>
+            <div class="suggestion-content">
+                {{suggestion}}
+            </div>
+        </div>
+        }
+
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+        <a  class="btn btn-primary" (click)="downloadReport()">Download Report <span class="btn-icon">→</span></a>
+    </div>
+</div>

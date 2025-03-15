@@ -1,0 +1,136 @@
+
+  /* ===== MAIN CONTAINER ===== */
+  .container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+} 
+ 
+/* ===== DASHBOARD CONTAINER ===== */
+.dashboard {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* ===== DASHBOARD HEADER ===== */
+.dashboard-header {
+    background-color: #6c5ce7;
+    color: #fff;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.dashboard-header h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.dashboard-header .candidate-info {
+    display: flex;
+    font-size: 14px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.gap-10 {
+    display: flex;
+    gap: 10px;
+}
+
+
+
+/* ===== RESPONSIVE DESIGN ===== */
+/* Large tablets and small desktops */
+@media (max-width: 1024px) {
+    .score-overview {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cards per row */
+    }
+}
+
+/* Tablets and large mobile */
+@media (max-width: 768px) {
+
+    /* Dashboard header responsive */
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dashboard-header .candidate-info {
+        margin-top: 10px;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .gap-10 {
+        display: flex;
+        gap: 10px;
+    }
+
+    /* Score overview responsive */
+    .score-overview {
+        grid-template-columns: 1fr;
+        /* 1 card per row */
+    }
+
+    /* Keyword analysis responsive */
+    .keyword-analysis {
+        grid-template-columns: 1fr;
+        /* 1 card per row */
+    }
+
+    /* Dashboard content padding */
+    .dashboard-content {
+        padding: 20px 15px;
+    }
+
+    /* Score circle size on mobile */
+    .score-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .score-inner {
+        width: 90px;
+        height: 90px;
+    }
+
+    .score-value {
+        font-size: 28px;
+    }
+
+    /* Section title responsive */
+    .section-title {
+        font-size: 20px;
+    }
+
+    /* Action buttons responsive */
+    .action-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+
+    /* Stack recommendation items */
+    .recommendation-item {
+        flex-direction: column;
+    }
+
+    .recommendation-icon {
+        margin-bottom: 10px;
+    }
+
+
+}

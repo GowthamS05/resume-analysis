@@ -1,0 +1,21 @@
+<div class="container" #reportContent>
+
+<app-jd-score-dashboard-header></app-jd-score-dashboard-header>
+    <!-- Dashboard Container -->
+    <div class="dashboard">
+        <!-- Dashboard Header with User Info -->
+        <div class="dashboard-header">
+            <h2>Job Match Results</h2>
+            <div class="candidate-info" *ngIf="data() as jdData">
+                <div class="gap-10"><i class="fa fa-user"></i> <b>{{ jdData.name }}</b> | </div>
+                <div class="gap-10"><i class="fa fa-envelope"></i> <b>{{ jdData.email }} </b> | </div>
+                <div class="gap-10"><i class="fa fa-phone"></i> <b>{{ jdData.phone }}</b> | </div>
+                <div class="gap-10"><i class="fa fa-location"></i> <b>{{ jdData.location }}</b></div>
+
+            </div>
+        </div>
+
+        <!-- Dashboard Content Area -->
+        <app-jd-score-dashboard-content [data]="data()" [reportDOM]="reportContent"></app-jd-score-dashboard-content>
+    </div>
+</div>

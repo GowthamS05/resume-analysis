@@ -1,0 +1,95 @@
+<div class="dashboard-content">
+    <!-- Score Overview Section -->
+    <h3 class="section-title">Match Overview</h3>
+    <div class="score-overview">
+        <div class="score-card">
+            <div class="score-circle">
+              <div class="score-circle-bg"></div>
+              <div class="score-progress over50" [style.--progress]="overallScore + '%'" [style.--progress-color]="
+              overallScore > 80 ? '#009f00' : 
+              overallScore > 70 ? '#26bc26' : 
+              overallScore > 60 ? '#e74c3c' : '#e74c3c'">
+              </div>
+              <div class="score-inner">
+                <div class="score-value">{{ overallScore | number: '1.0-0' }}</div>
+                <div class="score-label">Out of 100</div>
+              </div>
+            </div>
+            <h4 class="score-title">Overall Match Score</h4>
+            <p class="score-description">{{data.scoreComments}}</p>
+          </div>
+        <!-- Job relevance keyword  Score -->
+        <div class="score-card">
+            <div class="score-circle">
+              <div class="score-circle-bg"></div>
+              <div class="score-progress over50" [style.--progress]="relevance + '%'" [style.--progress-color]="
+              relevance > 80 ? '#009f00' : 
+              relevance > 70 ? '#26bc26' : 
+              relevance > 60 ? '#e74c3c' : '#e74c3c'">
+              </div>
+              <div class="score-inner">
+                <div class="score-value">{{ relevance | number: '1.0-0' }}</div>
+                <div class="score-label">Out of 100</div>
+              </div>
+            </div>
+            <h4 class="score-title">Job Relevance</h4>
+            <p class="score-description">{{data.relevanceComments}}</p>
+          </div>
+    </div>
+
+    <!-- Skills Analysis Section -->
+    <h3 class="section-title">Skills Analysis</h3>
+    <div class="skills-analysis">
+        <!-- Matching Skills Card -->
+        <div class="skills-card">
+            <h3>
+                Matching Skills
+                <span class="skills-count">{{data['matching_skills'].length}}</span>
+            </h3>
+            <div class="skills-grid">
+                @for (matching of data['matching_skills']; track matching) {
+
+                <!-- Each matching skill is displayed as a tag -->
+                <div class="skill-tag">{{matching}}</div>
+              
+                }
+            </div>
+        </div>
+
+        <!-- Missing Skills Card -->
+        <div class="skills-card">
+            <h3>
+                Missing Skills
+                <span class="skills-count">{{data['missing_skills'].length}}</span>
+            </h3>
+            <div class="skills-grid">
+                <!-- Each missing skill is displayed as a tag with different styling -->
+                @for (missing of data['missing_skills']; track missing) {
+
+                <div class="skill-tag missing">{{missing}}</div>
+                }
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Recommendations Section -->
+    <h3 class="section-title">Improvement Recommendations</h3>
+    <div class="recommendations">
+        @for (recommendation of data['recommendations']; track recommendation) {
+        <!-- Individual recommendation items -->
+        <div class="recommendation-item">
+            <div class="recommendation-icon">✅</div>
+            <div class="recommendation-content">
+                {{recommendation}}
+            </div>
+        </div>
+    }
+
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+        <a class="btn btn-primary" (click)="downloadReport()">Download Report <span class="btn-icon">→</span></a>
+    </div>
+</div>

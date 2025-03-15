@@ -1,0 +1,26 @@
+<div class="container" #reportContent>
+    <!-- Page Header -->
+    <app-ats-dashboard-header></app-ats-dashboard-header>
+
+
+    <div class="dashboard">
+        <div class="dashboard-header">
+            <h2>ATS Score Results</h2>
+            <div class="candidate-info" *ngIf="data() as atsData">
+                <div class="gap-10"><i class="fa fa-user"></i> <b>{{ atsData.name }}</b> | </div>
+                <div class="gap-10"><i class="fa fa-envelope"></i> <b>{{ atsData.email }} </b> | </div>
+                <div class="gap-10"><i class="fa fa-phone"></i> <b>{{ atsData.phone }}</b> | </div>
+                <div class="gap-10"><i class="fa fa-location"></i> <b>{{ atsData.location }}</b></div>
+
+            </div>
+        </div>
+
+        @defer (when data() !== null) {
+            <app-ats-dashboard-content [data]="data()" [reportDOM]="reportContent"></app-ats-dashboard-content>
+        } @loading {
+            <p>Loading results...</p>
+        } @error {
+            <p>Error loading ATS score data.</p>
+    } 
+    </div>
+</div>

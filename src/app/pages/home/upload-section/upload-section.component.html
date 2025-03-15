@@ -1,0 +1,106 @@
+<section id="start" class="upload-section">
+    <div class="container">
+        <h3>Enter Api key <a href="https://aistudio.google.com/app/apikey" target="_blank"><i class="fa fa-info-circle" aria-hidden="true" data-tooltip="Click the icon to generate free API key"></i></a>
+        </h3>
+        
+        <br/>
+
+        <form [formGroup]="apiKeyForm" (ngSubmit)="validateKey()">
+            <div class="form-group">
+              <div class="input-wrapper">
+                <input type="password" formControlName="apiKey" placeholder="Enter your API key" autocomplete="off">
+                <span class="message" [ngClass]="validationInfo.valid ? 'success-message' : 'error-message'">
+                    {{ validationInfo.message }}
+                </span>
+              </div>
+              <button type="submit" class="button" [disabled]="apiKeyForm.invalid || isValidateResumeLoading">
+                <div class="spinner" *ngIf="isValidateResumeLoading"></div>
+                
+                <span *ngIf="!isValidateResumeLoading">Validate Key</span>
+              </button>
+            </div>
+          </form>
+
+        <div class="upload-container">
+            <div class="upload-box glass">
+                <h3>Upload Your Resume</h3>
+                <div class="file-upload" (click)="fileInput.click()">
+                    <i class="fas fa-file-upload"></i>
+                    <p>Click here and upload single file</p>
+                    <span>Supports PDF files only (Max size: 5MB)</span>
+                </div>
+                <input type="file" #fileInput accept=".pdf" (change)="handleFile($event)"
+                     hidden />
+
+                <!-- Display Selected File -->
+                @if(selectedFile){
+                <div class="file-chips">
+                    <div class="file-chip">
+                        <span>{{ selectedFile.name }}</span>
+                        <button class="remove-file" (click)="removeFile()">×</button>
+                    </div>
+                </div>
+                }
+
+                <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+            </div>
+
+            <div class="job-description glass">
+                <h3>Job Description (Needed for Job Match and Overall fedback)</h3>
+                <textarea [(ngModel)]="jobDescription"
+                    placeholder="Paste the job description here to analyze the match between your resume and the role..."></textarea>
+            </div>
+        </div>
+
+        <!-- Analysis Options -->
+        <div class="analysis-options">
+            <div class="options-title">
+                <h2>Select Analysis Options</h2>
+            </div>
+
+            <div class="option-cards">
+                <div class="option-card glass" [class.selected]="analysisOptions.ats_score"
+                    (click)="toggleOption('ats_score')">
+                    <div class="option-checkbox"></div>
+                    <i class="fas fa-chart-bar"></i>
+                    <h4>ATS Score</h4>
+                    <p>See how well your resume passes through Applicant Tracking Systems.</p>
+                </div>
+
+                <div class="option-card glass" [class.selected]="analysisOptions.structure"
+                (click)="toggleOption('structure')">
+                <div class="option-checkbox"></div>
+                <i class="fas fa-file-alt"></i>
+                <h4>Resume Structure</h4>
+                <p>Get feedback on your resume's formatting, organization, and content.</p>
+            </div>
+
+                <div class="option-card glass" [class.selected]="analysisOptions.match" (click)="toggleOption('match')">
+                    <div class="option-checkbox"></div>
+                    <i class="fas fa-check-circle"></i>
+                    <h4>Job Match</h4>
+                    <p>Analyze how well your resume matches the specific job requirements.</p>
+                </div>
+
+               
+
+                <div class="option-card glass" [class.selected]="analysisOptions.overall"
+                    (click)="toggleOption('overall')">
+                    <div class="option-checkbox"></div>
+                    <i class="fas fa-star"></i>
+                    <h4>Overall Feedback</h4>
+                    <p>Comprehensive analysis including all three metrics above.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Action Button -->
+        <div class="action-button">
+            <button id="analyze-btn" class="btn btn-primary" [disabled] = analysisLoading  #analyzeBtn (click)="analyzeResume()">
+                <div class="spinner" *ngIf="analysisLoading"></div>
+                <span *ngIf="!analysisLoading">Analyze Resume</span>
+            </button>
+        </div>
+    </div>
+</section>

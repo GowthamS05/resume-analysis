@@ -1,0 +1,20 @@
+<div class="container" #reportContent>
+    <!-- Page Header -->
+ <app-overall-dashboard-header></app-overall-dashboard-header>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard">
+        <!-- Dashboard Header with User Info -->
+        <div class="dashboard-header">
+            <h2>Resume Analysis Result</h2>
+            <div class="candidate-info">
+                <div class="gap-10"><i class="fa fa-user"></i> <b>{{ats_score['name']}}</b> | </div>
+                <div class="gap-10" ><i class="fa fa-envelope"></i> <b>{{ats_score['email']}}</b> | </div>
+                <div class="gap-10"><i class="fa fa-phone"></i> <b>{{ats_score['phone']}}</b> | </div>
+                <div class="gap-10"><i class="fa fa-location"></i> <b>{{ ats_score['location'] }}</b> </div>
+
+            </div>
+        </div>
+    <app-overall-dashboard-content [ats_score]="ats_score" [jd_score]="jd_score" [format_score]="format_score" [overall_score]="overall_score" [reportDOM]="reportContent"></app-overall-dashboard-content>
+    </div>
+</div>

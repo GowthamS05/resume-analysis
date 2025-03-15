@@ -1,0 +1,196 @@
+<!-- Dashboard Content Area -->
+<div class="dashboard-content">
+    <!-- OVERVIEW TAB -->
+    <div class="tab-content active" id="overview">
+        <!-- Score Overview Section -->
+        <h3 class="section-title"><span class="section-icon">📊</span>Overall Scores</h3>
+        <div class="score-overview">
+            <!-- Overall Score -->
+            <div class="score-card">
+                <div class="score-circle">
+                    <div class="score-circle-bg"></div>
+                    <div class="score-progress over50" [style.--progress]="overallScore + '%'"
+                    [style.--progress-color]="
+                    overallScore > 80 ? '#009f00' : 
+                    overallScore > 70 ? '#26bc26' : 
+                    overallScore > 60 ? '#e74c3c' : '#e74c3c'">
+                    </div>
+                    <div class="score-inner">
+                        <div class="score-value">{{ overallScore | number: '1.0-0' }}</div>
+                        <div class="score-label">Out of 100</div>
+                    </div>
+                </div>
+                <h4 class="score-title">Overall Score</h4>
+                <p class="score-description">{{overall_score.overall_scoreComments}}
+                </p>
+            </div>
+
+            <!-- ATS Score -->
+            <div class="score-card">
+                <div class="score-circle">
+                    <div class="score-circle-bg"></div>
+                    <div class="score-progress over50" [style.--progress]="atsScore + '%'"
+                    [style.--progress-color]="
+                    atsScore > 80 ? '#009f00' : 
+                    atsScore > 70 ? '#26bc26' : 
+                    atsScore > 60 ? '#e74c3c' : '#e74c3c'">
+                    </div>
+                    <div class="score-inner">
+                        <div class="score-value">{{atsScore | number: '1.0-0' }}</div>
+                        <div class="score-label">Out of 100</div>
+                    </div>
+                </div>
+                <h4 class="score-title">ATS Score</h4>
+                <p class="score-description">{{ats_score.overallComment}}</p>
+            </div>
+
+            <!-- Job Match Score -->
+            <div class="score-card">
+                <div class="score-circle">
+                    <div class="score-circle-bg"></div>
+                    <div class="score-progress over50" [style.--progress]="jdScore + '%'"
+                    [style.--progress-color]="
+                    jdScore > 80 ? '#009f00' : 
+                    jdScore > 70 ? '#26bc26' : 
+                    jdScore > 60 ? '#e74c3c' : '#e74c3c'">
+                    </div>
+                    <div class="score-inner">
+                        <div class="score-value">{{jdScore | number: '1.0-0' }}</div>
+                        <div class="score-label">Out of 100</div>
+                    </div>
+                </div>
+                <h4 class="score-title">Job Match</h4>
+                <p class="score-description">{{jd_score.scoreComments}}</p>
+            </div>
+
+            <!-- Format Score -->
+            <div class="score-card">
+                <div class="score-circle">
+                    <div class="score-circle-bg"></div>
+                    <div class="score-progress over50" [style.--progress]="formatScore + '%'"
+                    [style.--progress-color]="
+                    formatScore > 80 ? '#009f00' : 
+                    formatScore > 70 ? '#26bc26' : 
+                    formatScore > 60 ? '#e74c3c' : '#e74c3c'">
+                    </div>
+                    <div class="score-inner">
+                        <div class="score-value">{{formatScore | number: '1.0-0' }}</div>
+                        <div class="score-label">Out of 100</div>
+                    </div>
+                </div>
+                <h4 class="score-title">Format Score</h4>
+                <p class="score-description">{{format_score.completenessComments}}</p>
+            </div>
+        </div>
+
+        <!-- Summary Section -->
+        <h3 class="section-title"><span class="section-icon">📝</span>Executive Summary</h3>
+        <div class="summary-section">
+            <p class="summary-text">
+                {{overall_score['summary']}}
+            </p>
+        </div>
+
+        <!-- Strengths and Weaknesses -->
+        <h3 class="section-title"><span class="section-icon">⚖️</span>Strengths &amp; Weaknesses</h3>
+        <div class="strengths-weaknesses">
+            <!-- Strengths -->
+            <div class="strengths-card">
+                <h3><span class="icon">✓</span>Strengths</h3>
+
+                <ul class="strengths-list">
+                    @for (strength of overall_score['strengths']; track strength) {
+                    <li class="strength-item">
+                        <div class="strength-icon">✓</div>
+                        <div class="strength-text">{{strength}}
+                        </div>
+                    </li>
+                    }
+
+                </ul>
+            </div>
+
+            <!-- Weaknesses -->
+            <div class="weaknesses-card">
+                <h3><span class="icon">×</span>Weaknesses</h3>
+
+                <ul class="weaknesses-list">
+                    @for (weakness of overall_score['weaknesses']; track weakness) {
+
+                    <li class="weakness-item">
+                        <div class="weakness-icon">×</div>
+                        <div class="weakness-text">{{weakness}}</div>
+                    </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <!-- Skills Analysis Section -->
+        <h3 class="section-title">Skills Analysis based on Job description</h3>
+        <div class="skills-analysis">
+            <!-- Matching Skills Card -->
+            <div class="skills-card">
+                <h3>
+                    Matching Skills
+                    <span class="skills-count">{{jd_score['matching_skills'].length}}</span>
+                </h3>
+                <div class="skills-grid">
+                    @for (matching of jd_score['matching_skills']; track matching) {
+
+                    <!-- Each matching skill is displayed as a tag -->
+                    <div class="skill-tag">{{matching}}</div>
+
+                    }
+                </div>
+            </div>
+
+            <!-- Missing Skills Card -->
+            <div class="skills-card">
+                <h3>
+                    Missing Skills
+                    <span class="skills-count">{{jd_score['missing_skills'].length}}</span>
+                </h3>
+                <div class="skills-grid">
+                    <!-- Each missing skill is displayed as a tag with different styling -->
+                    @for (missing of jd_score['missing_skills']; track missing) {
+
+                    <div class="skill-tag missing">{{missing}}</div>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Action Items -->
+        <h3 class="section-title"><span class="section-icon">🎯</span>Action Items</h3>
+        <div class="action-items">
+            <h3><span class="icon">🎯</span>Recommended Actions</h3>
+            <ul class="action-list">
+                <li class="action-item" *ngFor="let action of overall_score['action_items']; let i = index;">
+                    <div class="action-number">{{ i + 1 }}</div>
+                    <div class="action-text">{{ action }}</div>
+                </li>
+
+
+            </ul>
+        </div>
+
+        <!-- Improvement Plan -->
+        <h3 class="section-title"><span class="section-icon">📈</span>Improvement Plan</h3>
+        <div class="improvement-plan">
+            <h3><span class="icon">📈</span>Strategic Plan</h3>
+            <p class="improvement-text">
+                {{overall_score['improvement_plan']}}
+            </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <a  class="btn btn-primary" (click)="downloadReport()">Download Comprehensive Report <span class="btn-icon">↓</span></a>
+        </div>
+    </div>
+
+
+</div>

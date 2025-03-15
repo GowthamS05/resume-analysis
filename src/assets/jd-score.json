@@ -1,0 +1,33 @@
+{
+  
+    "name": "Gowtham S",
+    "email": "gow1234@gmail.com",
+    "phone": "+91-123456789",
+    "score": 70,
+    "matching_skills": [
+      "JavaScript",
+      "TypeScript",
+      "Angular",
+      "HTML5",
+      "CSS3",
+      "Python",
+      "CI/CD",
+      "Agile"
+    ],
+    "missing_skills": [
+      "React",
+      "Redux",
+      "D3JS",
+      "NodeJs",
+      "Webpack",
+      "Jest",
+      "Cypress"
+    ],
+    "recommendations": [
+      "Gain experience with React and Redux",
+      "Familiarize with D3JS for data visualization",
+      "Learn NodeJs and Webpack for backend integration",
+      "Consider obtaining certification in cloud technologies"
+    ],
+    "relevance": 85
+  }
