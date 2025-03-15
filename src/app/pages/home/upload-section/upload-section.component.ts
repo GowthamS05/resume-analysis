@@ -241,6 +241,8 @@ export class UploadSectionComponent {
             error: (feedbackError) => {
               console.error('Feedback analysis error:', feedbackError);
               this.toastService.showError('Feedback analysis failed', 'Failure');
+              this.toastService.showInfo('The response may contain inaccuracies. Please try again.', 'AI Warning');
+
               this.analysisLoading = false;
 
             }
@@ -269,6 +271,7 @@ export class UploadSectionComponent {
       error: (error: any) => {
         console.error('Analysis error:', error);
         this.toastService.showError('Resume analysis failed', 'Failure');
+        this.toastService.showInfo('The response may contain inaccuracies. Please try again.', 'AI Warning');
         this.analysisLoading = false;
       }
     });

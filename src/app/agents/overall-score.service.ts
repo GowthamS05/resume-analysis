@@ -101,6 +101,7 @@ export class OverallScoreService {
         responseText = responseText.replace(/^```json|```$/g, '');
         responseText = responseText.replace(/,\s*([}\]])/g, '$1');
         try {
+          console.log('ResponseText',responseText);
           const parsedResult = JSON.parse(responseText) as FeedbackResult;
           return parsedResult;
         } catch (error) {

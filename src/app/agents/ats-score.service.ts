@@ -84,6 +84,7 @@ export class ATSScoreService {
         responseText = responseText.replace(/^```json|```$/g, '');
         responseText = responseText.replace(/,\s*([}\]])/g, '$1');
         try {
+          console.log('ResponseText',responseText);
           const parsedResult = JSON.parse(responseText) as ATSAnalysisResult;
           return parsedResult;
         } catch (error) {
