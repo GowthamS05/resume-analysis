@@ -14,7 +14,6 @@ import { JDRouterGuard } from './guards/jd-router.guards';
 import { ATSRouterGuard } from './guards/ats-router.guards';
 
 export const ROUTE_PATHS = {
-  HOME: 'home',
   ATS: 'ats',
   JD: 'jd',
   FORMAT: 'format',
@@ -23,14 +22,10 @@ export const ROUTE_PATHS = {
 
 export const routes: Routes = [
   { 
-    path: ROUTE_PATHS.HOME,
+    path: '',
     loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent),
     title: 'Home',
     
-  },
-  { 
-    path: 'home', // Keeping this for backward compatibility
-    redirectTo: ROUTE_PATHS.HOME 
   },
   { 
     path: ROUTE_PATHS.ATS,
@@ -62,7 +57,7 @@ export const routes: Routes = [
   },
   { 
     path: '**',
-    redirectTo: ROUTE_PATHS.HOME
+    redirectTo: ''
   }
 ];
 
