@@ -14,7 +14,7 @@ export class ATSScoreService {
     let genAI: GoogleGenerativeAI;
     let model: GenerativeModel;
     genAI = new GoogleGenerativeAI(api_key);
-    model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+    model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
     const prompt = `
           You are an **Applicant Tracking System (ATS) expert** specializing in **resume optimization**. Analyze the provided resume strictly for **ATS compatibility** and return the results **only in valid JSON format**. Ensure the analysis is based **solely on the resume content** without adding, inferring, or fabricating any details.
 
